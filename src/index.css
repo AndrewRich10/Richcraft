@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: 'Havelock Titling';
-  src: url('./assets/fonts/HavelockTitlingVariable.eot');
+  src: url('./assets/fonts/HavelockTitlingVariable.ttf') format(ttf);
   src:url('./assets/fonts/HavelockTitlingVariable.otf') format('otf'),
       url('./assets/fonts/HavelockTitlingVariable.svg') format('svg'),
       url('./assets/fonts/HavelockTitlingVariable.woff') format('woff'),
