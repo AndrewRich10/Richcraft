@@ -12,6 +12,13 @@
   --font-body: 'Work Sans', sans-serif;
 }
 
+@font-face {
+  font-family: 'Havelock Titling';
+  src: url('/fonts/HavelockTitlingVariable.tff') format('tff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -141,4 +148,9 @@ header nav ul li a {
 .wood {
   color: #B78628; /* Rich Amber */
   font-weight: 800; /* Optional: Make it stand out more */
+}
+
+.logo {
+  font-family: 'Havelock Titling';
+  height: 40px;
 }

@@ -2,12 +2,13 @@ import React from 'react';
 import './index.css';
 import Box from '@mui/material/Box';
 import Sawblade from './sawblade.tsx';
+import Logo from "./assets/Richcraft.svg";
 
 const App: React.FC = () => {
   return (
     <div className="app">
       <header className="header">
-        <h1>Richcraft</h1>
+        <img src={Logo} alt="Richcraft Logo" className="logo" />
         <nav>
           <ul>
             <li><a href="#about">About</a></li>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 218.52 44.01">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: rgb(255, 255, 255);
+      }
+
+      .cls-2 {
+        font-family: 'Havelock Titling';
+        font-size: 26px;
+        font-variation-settings: 'wght' 700;
+        font-weight: 700;
+        letter-spacing: -0.05em; /* Apply consistent letter-spacing */
+      }
+
+      .cls-8 {
+        stroke-width: 2.52px;
+      }
+
+      .cls-8, .cls-9 {
+        fill: none;
+        stroke: rgb(255, 255, 255);
+        stroke-miterlimit: 10;
+      }
+
+      .cls-9 {
+        stroke-width: 2.52px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <rect class="cls-9" x="174.36" y="1.26" width="42.9" height="41.49" />
+      <g>
+        <g>
+          <rect class="cls-8" x="1.26" y="1.26" width="174.51" height="41.49" />
+          <path class="cls-1" d="M175.78,1.26v41.49h41.48V1.26h-41.48ZM192.02,9.8l4.16-4.16c.19-.19.5-.19.69,0l10.84,10.84c.19.19.19.5,0,.69l-4.16,4.16c-.19.19-.5.19-.69,0l-10.84-10.84c-.19-.19-.19-.5,0-.69ZM183.83,26.03l-3.81-3.81c-.12-.12-.12-.3,0-.42l4.43-4.43c.12-.12.3-.12.42,0l3.81,3.81c.12.12.12.3,0,.42l-4.43,4.43c-.12.12-.3.12-.42,0ZM201.02,34.21l-4.16,4.16c-.19.19-.5.19-.69,0l-10.84-10.84c-.19-.19-.19-.5,0-.69l4.16-4.16c.19-.19.5-.19.69,0l10.84,10.84c.19.19.19.5,0,.69ZM206.88,28.35l-4.02,4.02c-.23.23-.6.23-.83,0l-15.88-15.88c-.23-.23-.23-.6,0-.83l4.02-4.02c.23-.23.6-.23.83,0l15.88,15.88c.23.23.23.6,0,.83ZM213.02,22.21l-4.43,4.43c-.12.12-.3.12-.42,0l-3.81-3.81c-.12-.12-.12-.3,0-.42l4.43-4.43c.12-.12.3-.12.42,0l3.81,3.81c.12.12.12.3,0,.42Z" />
+        </g>
+        <text class="cls-2" transform="translate(5.54 31.89) scale(.9 1)">
+          RICHCRAFT
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
