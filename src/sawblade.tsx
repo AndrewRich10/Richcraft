@@ -1,7 +1,9 @@
+import saw from "./assets/sawblade.svg";
+
 const Sawblade = () => {
   return (
     <div className="sawblade-container">
-      <img src="/src/assets/sawblade.svg" alt="Sawblade" className="sawblade" />
+      <img src={saw} alt="Sawblade" className="sawblade" />
     </div>
   );
 };
