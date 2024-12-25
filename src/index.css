@@ -14,14 +14,12 @@
 
 @font-face {
   font-family: 'Havelock Titling';
-  src: url('/fonts/HavelockTitlingVariable.tff') format('truetype');
-  src: url('/fonts/HavelockTitlingVariable.otf') format('otf');
-  src: url('/fonts/HavelockTitlingVariable.svg') format('svg');
-  src: url('/fonts/HavelockTitlingVariable.eot') format('embedded-opentype');
-  src: url('/fonts/HavelockTitlingVariable.woff') format('woff');
-  src: url('/fonts/HavelockTitlingVariable.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+  src: url('/fonts/HavelockTitlingVariable.eot');
+  src: url('/fonts/HavelockTitlingVariable.tff') format('truetype'),
+      url('/fonts/HavelockTitlingVariable.otf') format('otf'),
+      url('/fonts/HavelockTitlingVariable.svg') format('svg'),
+      url('/fonts/HavelockTitlingVariable.woff') format('woff'),
+      url('/fonts/HavelockTitlingVariable.woff2') format('woff2');
 }
 
 body {
