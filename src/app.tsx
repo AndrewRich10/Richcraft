@@ -2,13 +2,14 @@ import React from 'react';
 import './index.css';
 import Box from '@mui/material/Box';
 import Sawblade from './sawblade.tsx';
-import Logo from "./assets/Richcraft.svg";
+import Logo from "./assets/Richcraft.png";
+import 'react-bootstrap'
 
 const App: React.FC = () => {
   return (
     <div className="app">
       <header className="header">
-        <img src={Logo} alt="Richcraft Logo" className="logo" />
+      <img src={Logo} alt="Richcraft logo" className="logo" />
         <nav>
           <ul>
             <li><a href="#about">About</a></li>
@@ -31,10 +32,10 @@ const App: React.FC = () => {
             <p>Richcraft specializes in woodworking projects, creating timeless and bespoke pieces that bring warmth and elegance to any space.</p>
           </Box>
         </section>
+      </main>
         <footer className="footer">
           © 2024 Richcraft. All rights reserved.
         </footer>
-      </main>
     </div>
   );
 };

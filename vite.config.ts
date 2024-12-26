@@ -5,7 +5,8 @@ import svgr from 'vite-plugin-svgr';
 // https://vite.dev/config/
 export default defineConfig({
   base: '',
-  root: '',
+  root: './',
+  publicDir: 'public',
   plugins: [react(), svgr()],
   server: { 
     host: '0.0.0.0', // Listen on all network interfaces

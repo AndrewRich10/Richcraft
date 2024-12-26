@@ -12,9 +12,10 @@
   --font-body: 'Work Sans', sans-serif;
 }
 
-@font-face {
-  font-family: 'Havelock Titling';
-  src: url('./assets/fonts/HavelockTitlingVariable.woff2');
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -87,10 +88,15 @@ header nav ul li a {
   margin-bottom: 1rem;
 }
 
+.main-footer {margin-top: auto;}
+
 .footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--charcoal-gray);
   color: var(--soft-white);
-  text-align: center;
   padding: 1rem;
 }
 
@@ -102,7 +108,7 @@ header nav ul li a {
   margin: 0 auto;
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='15' ry='15' stroke='%23333333FF' stroke-width='2' stroke-dasharray='' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
   border-radius: 15px;
-  position: relative; /* Make the box the positioning context */
+  position: relative;
   overflow: hidden; 
 }
 
@@ -142,13 +148,11 @@ header nav ul li a {
   }
 }
 
-
 .wood {
   color: #B78628; /* Rich Amber */
   font-weight: 800; /* Optional: Make it stand out more */
 }
 
 .logo {
-  font-family: 'Havelock Titling';
   height: 40px;
 }
