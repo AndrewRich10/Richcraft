@@ -27,6 +27,7 @@ body {
   background:
     linear-gradient(-220deg, #FFF0 0%, #FFFF 100%) 0 0 / 100dvw 100dvh,
     conic-gradient(from 90deg at 1px 1px, #8880 90deg, #888F 0) center -1px / 50px 50px;
+  background-attachment: fixed; 
 }
 
 .header {
@@ -61,7 +62,7 @@ header nav ul li a {
 
 .hero {
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
   background-color: var(soft-white);
 }
 
@@ -110,23 +111,7 @@ header nav ul li a {
   border-radius: 15px;
   position: relative;
   overflow: hidden;
-}
-
-.sliderbox {
-  background-color: #FAF9F6;
-  color: #333333;
-  padding: 16px;
-  width: 70%;
-  margin: 0 auto;
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='15' ry='15' stroke='%23333333FF' stroke-width='2' stroke-dasharray='' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
-  border-radius: 15px;
-  position: relative;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  height: 100%;
-  width: fit-content;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .sawblade-container {
@@ -166,10 +151,75 @@ header nav ul li a {
 }
 
 .wood {
-  color: #B78628; /* Rich Amber */
-  font-weight: 800; /* Optional: Make it stand out more */
+  color: #B78628;
+  font-weight: 800; 
 }
 
 .logo {
   height: 40px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #FAF9F6;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #FAF9F6;
+  text-decoration: none;
+}
+
+.nav-menu.open {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 0.5rem); /* Position below the button */
+    left: auto; /* Align under the button */
+    right: 1rem; /* Slight offset for alignment */
+    background-color: #333333;
+    border: 1px solid #FAF9F6;
+    border-radius: 8px;
+    width: max-content; /* Fit the menu width to its content */
+    padding: 0.5rem 1rem;
+    z-index: 10;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-menu a {
+    text-align: center;
+  }
 }
