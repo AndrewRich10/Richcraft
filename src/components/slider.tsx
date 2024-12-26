@@ -7,11 +7,7 @@ import c3 from "../assets/carousel3.png";
 import c4 from "../assets/carousel4.png";
 import c5 from "../assets/carousel5.png";
 
-interface SliderState {
-  currentStep: number;
-}
-
-class Slider extends Component<{}, SliderState> {
+class Slider extends Component<{}, { currentStep: number }> {
   private autoSlideInterval: NodeJS.Timeout | null;
 
   constructor(props: {}) {
@@ -25,47 +21,54 @@ class Slider extends Component<{}, SliderState> {
   }
 
   componentDidMount() {
-    // Start auto-slide
     this.startAutoSlide();
   }
 
   componentWillUnmount() {
-    // Clear auto-slide interval
     if (this.autoSlideInterval) {
       clearInterval(this.autoSlideInterval);
     }
   }
 
   startAutoSlide = () => {
-    const photos = [c1, c2, c3, c4, c5];
-
     this.autoSlideInterval = setInterval(() => {
       this.setState((prevState) => ({
-        currentStep: (prevState.currentStep + 1) % photos.length, // Loop around
+        currentStep: (prevState.currentStep + 1) % this.photos.length, // Loop through slides
       }));
-    }, 3000); // Slide every 3 seconds
+    }, 3000); // Change slide every 3 seconds
   };
 
+  photos = [c1, c2, c3, c4, c5]; // Slider images
+
   render() {
-    const photos = [c1, c2, c3, c4, c5];
     const { currentStep } = this.state;
 
     return (
       <div className="slider">
-        <div
-          className="slides"
-          style={{
-            transform: `translateX(${currentStep * -100}%)`,
-            transition: "transform 0.5s ease-out", // Smooth transition
-          }}
-        >
-          {photos.map((photo, idx) => (
-            <div
-              key={idx}
-              className="slide"
-              style={{ backgroundImage: `url('${photo}')` }}
-            />
-          ))}
+        <div className="slides">
+          {this.photos.map((photo, idx) => {
+            let positionClass = "";
+            let indexOffset = Math.abs(idx - currentStep) * 20; // Dynamic offset
+
+            if (idx === currentStep) {
+              positionClass = "active"; // Center image
+            } else if (idx < currentStep) {
+              positionClass = "passed"; // Left (blurred)
+            } else {
+              positionClass = "upcoming"; // Right (blurred)
+            }
+
+            return (
+              <div
+                key={idx}
+                className={`slide ${positionClass}`}
+                style={{
+                  backgroundImage: `url('${photo}')`,
+                  "--index-offset": `${indexOffset}px` as React.CSSProperties["--index-offset"],
+                }}
+              />
+            );
+          })}
         </div>
       </div>
     );
@@ -73,3 +76,4 @@ class Slider extends Component<{}, SliderState> {
 }
 
 export default Slider;
+

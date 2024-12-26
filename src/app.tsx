@@ -6,7 +6,6 @@ import Slider from './components/slider.tsx';
 import Logo from "./assets/Richcraft.png";
 import Nav from './components/nav.tsx';
 
-
 const App: React.FC = () => {
   return (
     <div className="app">
@@ -34,8 +33,8 @@ const App: React.FC = () => {
             <p>Explore our collection of handcrafted wooden masterpieces. Each piece is designed with care, precision, and creativity, showcasing the timeless beauty of wood.</p>
           </Box>
           <Box component="div" className="slider-box">
-            <Slider />
-          </Box>
+             <Slider />
+           </Box>
         </section>
       </main>
       <footer className="footer">

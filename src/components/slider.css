@@ -13,30 +13,72 @@
   padding: 2rem 1rem;
 }
 
+/* Slider Container */
 .slider {
+  position: relative;
   display: flex;
   justify-content: center;
-  user-select: none;
+  align-items: center;
   overflow: hidden;
-  width: 100%; /* Full width by default */
-  max-width: 400px; /* Constrain maximum size */
-  aspect-ratio: 1; /* Always keep the slider square */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px; /* Adjust as needed */
+  height: 400px; /* Matches square image size */
+  margin: auto;
 }
 
-.slide, .slides {
+/* Slides Wrapper */
+.slides {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  transition: transform 200ms;
-  flex: 0 0 100%;
-  height: 100%; /* Ensure it fills the slider height */
-  width: 100%; /* Ensure it fills the slider width */
-  aspect-ratio: 1; /* Maintain square aspect ratio */
-  background-repeat: no-repeat;
-  background-size: cover; /* Fill the entire slide area */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual Slide */
+.slide {
+  position: absolute;
+  width: 300px; /* Fixed square size */
+  height: 300px; /* Fixed square size */
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+  filter: blur(5px); /* Default blur */
+  opacity: 0.9; /* Dim non-active slides */
   border-radius: 15px;
+}
+
+/* Active Slide */
+.slide.active {
+  transform: translateX(0) scale(1.1); /* Centered and slightly larger */
+  filter: blur(0); /* No blur */
+  opacity: 1; /* Fully visible */
+  z-index: 2; /* Ensure it is above others */
+}
+
+/* Passed Slides (Left) */
+.slide.passed {
+  transform: translateX(calc(-100% - var(--index-offset))); /* Space passed slides */
+  z-index: calc(5 - var(--relative-index));
+}
+
+/* Upcoming Slides (Right) */
+.slide.upcoming {
+  transform: translateX(calc(100% + var(--index-offset))); /* Space upcoming slides */
+  z-index: calc(5 + var(--relative-index));
+}
+
+
+/* Maintain square images */
+@media (max-width: 768px) {
+  .slide {
+    flex: 0 0 auto; /* Adjust size for smaller screens */
+  }
+  .slider {
+    aspect-ratio: 1 / 1; /* Make the carousel square */
+  }
 }
 
 @media (hover: none) {
