@@ -1,0 +1,90 @@
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li a {
+    background-color: var(--charcoal-gray);
+    text-decoration: none;
+    color: var(--soft-white);
+    font-weight: 700;
+  }
+  
+*.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* Navigation Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--soft-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .nav-menu {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-menu a {
+    color: var(--soft-white);
+    text-decoration: none;
+  }
+  
+  .nav-menu.open {
+    display: block;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: calc(100% + 0.5rem); 
+      right: 1rem;
+      background-color: var(--charcoal-gray);
+      border: 1px solid var(--soft-white);
+      border-radius: 8px;
+      width: max-content;
+      padding: 0.5rem 1rem;
+      z-index: 10;
+    }
+  
+    .nav-menu.open {
+      display: flex;
+    }
+  
+    .nav-menu ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .nav-menu a {
+      text-align: center;
+    }
+  }

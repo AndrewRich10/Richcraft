@@ -1,22 +1,20 @@
 import { Component } from "react";
 import "./slider.css";
 
-interface Photo {
-  src: string;
-}
-
-interface SliderProps {
-  photos: Photo[];
-}
+import c1 from "../assets/carousel1.png";
+import c2 from "../assets/carousel2.png";
+import c3 from "../assets/carousel3.png";
+import c4 from "../assets/carousel4.png";
+import c5 from "../assets/carousel5.png";
 
 interface SliderState {
   currentStep: number;
 }
 
-class Slider extends Component<SliderProps, SliderState> {
+class Slider extends Component<{}, SliderState> {
   private autoSlideInterval: NodeJS.Timeout | null;
 
-  constructor(props: SliderProps) {
+  constructor(props: {}) {
     super(props);
 
     this.state = {
@@ -39,8 +37,9 @@ class Slider extends Component<SliderProps, SliderState> {
   }
 
   startAutoSlide = () => {
+    const photos = [c1, c2, c3, c4, c5];
+
     this.autoSlideInterval = setInterval(() => {
-      const { photos } = this.props;
       this.setState((prevState) => ({
         currentStep: (prevState.currentStep + 1) % photos.length, // Loop around
       }));
@@ -48,8 +47,8 @@ class Slider extends Component<SliderProps, SliderState> {
   };
 
   render() {
+    const photos = [c1, c2, c3, c4, c5];
     const { currentStep } = this.state;
-    const { photos } = this.props;
 
     return (
       <div className="slider">
@@ -64,7 +63,7 @@ class Slider extends Component<SliderProps, SliderState> {
             <div
               key={idx}
               className="slide"
-              style={{ backgroundImage: `url('${photo.src}')` }}
+              style={{ backgroundImage: `url('${photo}')` }}
             />
           ))}
         </div>

@@ -1,4 +1,5 @@
-  import saw from "./assets/sawblade.svg";
+import saw from "../assets/sawblade.svg";
+import './sawblade.css';
 
 const Sawblade = () => {
   return (
