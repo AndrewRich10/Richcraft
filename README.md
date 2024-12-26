@@ -1,15 +1,14 @@
 # **Richcraft Woodworking Website**
 
+[Richcraft](https://therichcraft.com/)
+
 Built using modern web technologies, the site attempts to provide a landing page for all things Richcraft.
 
 ---
 
 ## **Features**
 - **Responsive Design**: Optimized for desktop and mobile devices.
-- **Custom Animations**: Includes a rotating sawblade and dynamic interactions.
-- **Wood Texture Styling**: Uses an SVG filter to simulate wood grain textures for the boxes.
 - **Modular Components**: Built with reusable React components and Material-UI for styling.
-- **LAN Hosting**: Can be served locally for easy sharing on a local network.
 
 ---
 
@@ -20,7 +19,6 @@ Built using modern web technologies, the site attempts to provide a landing page
   - [Vite](https://vitejs.dev/) (Development server and build tool)
 - **Styling**:
   - CSS3
-  - Custom SVG filters for background textures
 
 ---
 
