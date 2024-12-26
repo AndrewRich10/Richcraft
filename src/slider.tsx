@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./slider.css";
 
 interface Photo {
@@ -11,72 +11,44 @@ interface SliderProps {
 
 interface SliderState {
   currentStep: number;
-  dragDistance: number;
-  isDragging: boolean;
 }
 
-class Slider extends React.Component<SliderProps, SliderState> {
-  private originalX: number;
+class Slider extends Component<SliderProps, SliderState> {
+  private autoSlideInterval: NodeJS.Timeout | null;
 
   constructor(props: SliderProps) {
     super(props);
 
     this.state = {
       currentStep: 0,
-      dragDistance: 0,
-      isDragging: false,
     };
 
-    this.originalX = 0;
+    this.autoSlideInterval = null;
   }
 
   componentDidMount() {
-    window.addEventListener("mousedown", this.handleMouseDown as EventListener);
-    window.addEventListener("mousemove", this.handleMouseMove as EventListener);
-    window.addEventListener("mouseup", this.handleMouseUp as EventListener);
+    // Start auto-slide
+    this.startAutoSlide();
   }
 
   componentWillUnmount() {
-    window.removeEventListener("mousedown", this.handleMouseDown as EventListener);
-    window.removeEventListener("mousemove", this.handleMouseMove as EventListener);
-    window.removeEventListener("mouseup", this.handleMouseUp as EventListener);
+    // Clear auto-slide interval
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
+    }
   }
 
-  handleMouseDown = (event: globalThis.MouseEvent) => {
-    this.originalX = event.clientX;
-    this.setState({
-      isDragging: true,
-    });
-  };
-
-  handleMouseMove = (event: globalThis.MouseEvent) => {
-    if (!this.state.isDragging) {
-      return;
-    }
-
-    this.setState({
-      dragDistance: event.clientX - this.originalX,
-    });
-  };
-
-  handleMouseUp = () => {
-    let newStep = this.state.currentStep;
-
-    if (this.state.dragDistance > 100) {
-      newStep--;
-    } else if (this.state.dragDistance < -100) {
-      newStep++;
-    }
-
-    this.setState({
-      currentStep: newStep,
-      dragDistance: 0,
-      isDragging: false,
-    });
+  startAutoSlide = () => {
+    this.autoSlideInterval = setInterval(() => {
+      const { photos } = this.props;
+      this.setState((prevState) => ({
+        currentStep: (prevState.currentStep + 1) % photos.length, // Loop around
+      }));
+    }, 3000); // Slide every 3 seconds
   };
 
   render() {
-    const { currentStep, dragDistance, isDragging } = this.state;
+    const { currentStep } = this.state;
     const { photos } = this.props;
 
     return (
@@ -84,8 +56,8 @@ class Slider extends React.Component<SliderProps, SliderState> {
         <div
           className="slides"
           style={{
-            transform: `translateX(${currentStep * -400 + dragDistance}px)`,
-            cursor: isDragging ? "grabbing" : "grab",
+            transform: `translateX(${currentStep * -100}%)`,
+            transition: "transform 0.5s ease-out", // Smooth transition
           }}
         >
           {photos.map((photo, idx) => (
