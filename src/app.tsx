@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 import './index.css';
 import Box from '@mui/material/Box';
-import Sawblade from './sawblade.tsx';
-import Slider from './slider.tsx';
+import Sawblade from './components/sawblade.tsx';
+import Slider from './components/slider.tsx';
 import Logo from "./assets/Richcraft.png";
 
-import c1 from "./assets/carousel1.png";
-import c2 from "./assets/carousel2.png";
-import c3 from "./assets/carousel3.png";
-import c4 from "./assets/carousel4.png";
-import c5 from "./assets/carousel5.png";
-
-const photos = [{ src: c1 }, { src: c2 }, { src: c3 }, { src: c4 }, { src: c5 }];
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +13,7 @@ const App: React.FC = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
-  return (
+  return (  
     <div className="app">
       <header className="header">
         <img src={Logo} alt="Richcraft logo" className="logo" />
@@ -55,7 +48,7 @@ const App: React.FC = () => {
             <p>Explore our collection of handcrafted wooden masterpieces. Each piece is designed with care, precision, and creativity, showcasing the timeless beauty of wood.</p>
           </Box>
           <Box component="div" className="slider-box">
-            <Slider photos={photos} />
+            <Slider />
           </Box>
         </section>
       </main>

@@ -9,15 +9,8 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
-  width: fit-content;
-  max-width: 60%;
+  max-width: 90%;
   padding: 2rem 1rem;
-}
-
-.slider-container {
-  width: 100%; /* Full width */
-  display: flex;
-  justify-content: center;
 }
 
 .slider {
@@ -32,17 +25,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.slides {
+.slide, .slides {
   display: flex;
   flex-direction: row;
   transition: transform 200ms;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: 100%; /* Match the height of the slider */
-}
-
-.slide {
   flex: 0 0 100%;
   height: 100%; /* Ensure it fills the slider height */
   width: 100%; /* Ensure it fills the slider width */
@@ -52,38 +38,3 @@
   background-position: center;
   border-radius: 15px;
 }
-
-@media (max-width: 2000px) {
-    .slider-box {
-      width: 80%; /* Scale the slider-box */
-    }
-  
-    .slider {
-      width: 80%; /* Scale the slider width */
-      aspect-ratio: 1; /* Keep it square */
-    }
-  }
-  
-  @media (max-width: 1500px) {
-    .slider-box {
-      width: 80%; /* Increase width percentage */
-    }
-  
-    .slider {
-      width: 80%; /* Match slider-box scaling */
-      aspect-ratio: 1; /* Keep it square */
-    }
-  }
-  
-  @media (max-width: 1000px) {
-    .slider-box {
-      width: 100%; /* Fill available width */
-    }
-  
-    .slider {
-      width: 100%; /* Match parent width */
-      aspect-ratio: 1; /* Keep it square */
-    }
-  }
-  
-
