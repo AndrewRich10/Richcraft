@@ -38,3 +38,9 @@
   background-position: center;
   border-radius: 15px;
 }
+
+@media (hover: none) {
+  .slider {
+    box-shadow: none
+  }
+}
