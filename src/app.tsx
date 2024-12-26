@@ -1,32 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './index.css';
 import Box from '@mui/material/Box';
 import Sawblade from './components/sawblade.tsx';
 import Slider from './components/slider.tsx';
 import Logo from "./assets/Richcraft.png";
+import Nav from './components/nav.tsx';
 
 
 const App: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
-  return (  
+  return (
     <div className="app">
       <header className="header">
         <img src={Logo} alt="Richcraft logo" className="logo" />
-        <button className="menu-toggle" onClick={toggleMenu}>
-          ☰
-        </button>
-        <nav className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+        <Nav />
       </header>
       <main>
         <section className="hero">
