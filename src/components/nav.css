@@ -1,3 +1,28 @@
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li a {
+    background-color: var(--charcoal-gray);
+    text-decoration: none;
+    color: var(--soft-white);
+    font-weight: 700;
+  }
+  
+*.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
 /* Navigation Menu */
 .menu-toggle {
     display: none;

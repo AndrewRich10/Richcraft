@@ -9,17 +9,17 @@ const Nav: React.FC = () => {
     };
 
     return (
-    <div>    
-    <button className="menu-toggle" onClick={toggleMenu}>
-        ☰  
-    </button>
-    <nav className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
-        <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div className='unselectable'>    
+        <button className="menu-toggle" onClick={toggleMenu}>
+            ☰  
+        </button>
+        <nav className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
+            <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </div>
     );
 };
