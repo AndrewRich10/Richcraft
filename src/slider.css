@@ -1,0 +1,22 @@
+.slider {
+    justify-content: center;
+    user-select: none;
+    overflow: hidden;
+    width: 400px;
+  }
+  
+  .slides {
+    display: flex;
+    flex-direction: row;
+  
+    transition: 200ms;
+  }
+  
+  .slide {
+    flex: 0 0 100%;
+    height: 400px;
+  
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
