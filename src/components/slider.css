@@ -60,14 +60,14 @@
 
 /* Passed Slides (Left) */
 .slide.passed {
-  transform: translateX(calc(-100% - var(--index-offset))); /* Space passed slides */
-  z-index: calc(5 - var(--relative-index));
+  transform: translateX(calc(-140% + var(--index-offset))); /* Space passed slides */
+  z-index: calc(5 + var(--relative-index));
 }
 
 /* Upcoming Slides (Right) */
 .slide.upcoming {
-  transform: translateX(calc(100% + var(--index-offset))); /* Space upcoming slides */
-  z-index: calc(5 + var(--relative-index));
+  transform: translateX(calc(110% + var(--index-offset))); /* Space upcoming slides */
+  z-index: calc(5 - var(--relative-index));
 }
 
 

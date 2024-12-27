@@ -6,6 +6,7 @@ import c2 from "../assets/carousel2.png";
 import c3 from "../assets/carousel3.png";
 import c4 from "../assets/carousel4.png";
 import c5 from "../assets/carousel5.png";
+  
 
 class Slider extends Component<{}, { currentStep: number }> {
   private autoSlideInterval: NodeJS.Timeout | null;
@@ -47,25 +48,32 @@ class Slider extends Component<{}, { currentStep: number }> {
       <div className="slider">
         <div className="slides">
           {this.photos.map((photo, idx) => {
-            let positionClass = "";
-            let indexOffset = Math.abs(idx - currentStep) * 20; // Dynamic offset
+            // Calculate the relative index for z-index and positioning
+            const relativeIndex =
+              idx >= currentStep
+                ? idx - currentStep // Upcoming slides
+                : this.photos.length - currentStep + idx; // Passed slides
 
-            if (idx === currentStep) {
-              positionClass = "active"; // Center image
-            } else if (idx < currentStep) {
-              positionClass = "passed"; // Left (blurred)
-            } else {
-              positionClass = "upcoming"; // Right (blurred)
-            }
+            // Determine the position class
+            const positionClass =
+              idx === currentStep
+                ? "active"
+                : idx < currentStep
+                ? "passed"
+                : "upcoming";
+
+            // Create the slide style
+            const slideStyle: React.CSSProperties = {
+              backgroundImage: `url('${photo}')`,
+              ["--index-offset" as any]: `${relativeIndex * 20}px`, // Custom property for offset
+              ["--relative-index" as any]: relativeIndex.toString(), // Custom property for z-index
+            };
 
             return (
               <div
                 key={idx}
                 className={`slide ${positionClass}`}
-                style={{
-                  backgroundImage: `url('${photo}')`,
-                  "--index-offset": `${indexOffset}px` as React.CSSProperties["--index-offset"],
-                }}
+                style={slideStyle} // Apply styles
               />
             );
           })}
@@ -76,4 +84,5 @@ class Slider extends Component<{}, { currentStep: number }> {
 }
 
 export default Slider;
+
 
