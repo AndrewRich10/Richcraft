@@ -25,7 +25,7 @@ body {
   background-attachment: fixed;
   background-color: var(--soft-white);
   background:
-    conic-gradient(from 90deg at 1px 1px, #FAF9F6 90deg, rgb(229, 229, 229) 0) center -1px / 75px 75px;
+    conic-gradient(from 90deg at 1px 1px, #FAF9F6 90deg, rgb(221, 221, 221) 0) center -1px / 75px 75px;
   background-attachment: fixed;
   overflow-x:hidden
 }
