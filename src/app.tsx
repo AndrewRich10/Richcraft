@@ -6,6 +6,8 @@ import Slider from './components/slider.tsx';
 import Logo from "./assets/Richcraft.png";
 import Nav from './components/nav.tsx';
 
+import Products from './components/products.tsx';
+
 const App: React.FC = () => {
   return (
     <div className="app">
@@ -35,6 +37,12 @@ const App: React.FC = () => {
           <Box component="div" className="slider-box">
              <Slider />
            </Box>
+        </section>
+        <section id="products" className="hero">
+          <Box component="div" className="box">
+            <h2>Products</h2>
+            <Products />
+          </Box>
         </section>
       </main>
       <footer className="footer">

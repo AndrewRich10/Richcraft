@@ -1,0 +1,80 @@
+/* Products page styles */
+.title-container {
+  text-align: center;
+  margin: 20px 0;
+}
+.title-container img {
+  max-width: 300px;
+  height: auto;
+}
+.image-error {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 5px;
+  font-family: Arial, sans-serif;
+}
+#error-message {
+  text-align: center;
+  color: #ff0000;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+#controls {
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+#disclaimer {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  color: #555;
+  font-size: 14px;
+  margin: 10px 0;
+}
+#products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.card {
+  background-color: #e8e6e3;
+  border: 1px solid #003087;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  min-height: 400px;
+  width: 280px;
+  margin: 10px;
+}
+.card .image-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.card img {
+  width: auto;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Make placeholder image smaller */
+.card img[src*="placeholder"] {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+}
+.card p {
+  margin: 5px 0;
+  color: #003087;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+.card p strong {
+  color: #333;
+  font-weight: bold;
+}
